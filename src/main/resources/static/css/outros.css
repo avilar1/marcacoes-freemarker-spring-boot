@@ -1,0 +1,173 @@
+:root {
+    --escuro: #344e41;
+    --medio: #588157;
+    --claro: #a3b18a;
+    --chamativo: #3a5a40;
+    --clarinho: #dad7cd;
+    --branco: #F5F5F5;
+    --preto: #3B2B34;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 200px;
+    background-color: var(--escuro);
+
+}
+
+nav {
+    height: 50px;
+    background-color: var(--medio);
+
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0px 10px 33px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 10px 33px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 10px 33px 0px rgba(0, 0, 0, 0.75);
+}
+
+header ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 0;
+}
+
+header ul li {
+    display: inline-block;
+
+}
+
+header ul li a {
+    color: var(--preto);
+}
+
+header div {
+    display: flex;
+    flex-direction: row;
+}
+
+header ul li a {
+    display: block;
+    background-color: var(--claro);
+    height: 46px;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 2px;
+}
+
+header ul li a:hover {
+    background-color: var(--clarinho);
+}
+
+body main {
+    background-color: var(--branco);
+
+}
+
+body main section {
+    background-color: var(--branco);
+    width: 80vw;
+    
+}
+
+body main aside {
+    background-color: var(--chamativo);
+    width: 20vw;
+    max-width: 150px;
+    height: fit-content;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+body main aside a {
+    font-size: .7rem;
+    color: var(--claro);
+}
+
+body main section div {
+    overflow-x: scroll;
+    background-color: var(--escuro);
+    color: var(--claro);
+    display: flex;
+    max-width: fit-content;
+}
+
+.controle {
+    width: 500px;
+    height: 500px;
+}
+
+/* 
+@media screen and ((min-width: 320px) and (max-width: 480px)) {
+    :root {
+        font-size: 5.16vw;
+    }
+}
+
+@media screen and (((min-width: 480px) and (max-width: 990px)) or (orientation: landscape))  {
+    :root {
+        font-size: 3.3vw;
+    }
+} */
+
+@media screen and (min-width: 990px) {
+    /* :root{
+        font-size: 16px;
+    } */
+
+    body main {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+}
+
+@media screen and (max-width: 990px) {
+    body main {
+        display: initial;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    body main aside,
+    body main section {
+        width: 100vw;
+    }
+
+    body main aside {
+        height: 100px;
+        max-width: none
+    }
+
+    body main aside ul li {
+        display: inline-block;
+
+    }
+}
+
+/*formula com fonte responsiva, na base 16px*/
+/* html {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 320px) {
+    html {
+      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    html {
+      font-size: 22px;
+    }
+  } */
+
+/*formula simplificada*/
+html {
+    font-size: min(max(1rem, 4vw), 22px);
+}
